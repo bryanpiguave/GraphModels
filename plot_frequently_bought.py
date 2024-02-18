@@ -52,11 +52,8 @@ nx.draw(subgraph, pos, with_labels=True, node_size=700, node_color='skyblue', fo
 nx.draw_networkx_nodes(subgraph, pos, nodelist=[query_node], node_color='red', node_size=700)
 plt.tight_layout()
 # Display the plot
-if args.output_path:
-    plt.savefig(args.output_path)
-else:
-    os.makedirs('visualization', exist_ok=True)
-    plt.savefig("visualization/subgraph.png")
+os.makedirs('visualization', exist_ok=True)
+plt.savefig("visualization/subgraph.png")
 
 def subgraph_top_nodes_with_largest_weights(graph, query_node, top_n=10):
     # Get the neighbors of the query node and their weights
